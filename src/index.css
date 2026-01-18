@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-amber-50 font-sans text-slate-900 antialiased;
+  }
+
+  /* Selection styling */
+  ::selection {
+    @apply bg-red-500 text-white;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke: 1px black;
+    text-shadow: 2px 2px 0 #000;
+  }
+
+  .text-shadow-sm {
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .retro-shadow {
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  }
+
+  .retro-shadow-lg {
+    box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+  }
+
+  .retro-shadow-xl {
+    box-shadow: 12px 12px 0px 0px rgba(0, 0, 0, 1);
+  }
+
+  /* Nutrition facts borders */
+  .nutrition-border {
+    @apply border-2 border-black;
+  }
+
+  .nutrition-thick-border {
+    border-bottom: 8px solid black;
+  }
+
+  .nutrition-thin-border {
+    border-bottom: 1px solid black;
+  }
+}
+
+/* Animation performance optimization */
+@layer utilities {
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+}
