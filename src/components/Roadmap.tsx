@@ -116,7 +116,7 @@ export default function Roadmap() {
                   }}
                   transition={{ duration: 0.5 }}
                 >
-                  {combo.icon || combo.emoji}
+                  {combo.emoji}
                 </motion.div>
               </div>
               <div className="p-8 text-left">

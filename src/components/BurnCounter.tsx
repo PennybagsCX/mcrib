@@ -7,7 +7,7 @@ export default function BurnCounter() {
   const [isExpanded, setIsExpanded] = useState(false);
   const contractAddress = import.meta.env.VITE_CONTRACT_ADDRESS || '';
 
-  const { data, tokenSymbol, isLoading, error, lastUpdated, refetch } = useBurnData(contractAddress);
+  const { data, isLoading, error, lastUpdated, refetch } = useBurnData(contractAddress);
 
   const containerVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -190,11 +190,11 @@ export default function BurnCounter() {
         {/* Buybacks & Last Updated Row */}
         <motion.div
           className={`grid gap-4 mt-4 pt-4 border-t-4 border-black ${
-            data?.buybackData.totalBuybacks > 0 ? 'grid-cols-2' : 'grid-cols-1'
+            (data?.buybackData?.totalBuybacks ?? 0) > 0 ? 'grid-cols-2' : 'grid-cols-1'
           }`}
           variants={itemVariants}
         >
-          {data?.buybackData.totalBuybacks > 0 && (
+          {(data?.buybackData?.totalBuybacks ?? 0) > 0 && (
             <div className="flex items-center justify-between p-4 bg-gradient-to-r from-green-500 to-green-600 rounded-lg border-4 border-black retro-shadow">
               <div className="flex items-center gap-2">
                 <span className="text-2xl">🍗</span>

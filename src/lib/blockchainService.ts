@@ -4,7 +4,6 @@ import { ethers } from 'ethers';
 const DOGECHAIN_RPC = import.meta.env.VITE_DOGECHAIN_RPC || 'https://rpc.dogechain.dog';
 const BLOCKSCOUT_API = import.meta.env.VITE_BLOCKSCOUT_API || 'https://explorer.dogechain.dog/api';
 const BURN_ADDRESS = import.meta.env.VITE_BURN_ADDRESS || '0x000000000000000000000000000000000000dEaD';
-const CONTRACT_ADDRESS = import.meta.env.VITE_CONTRACT_ADDRESS || '0xbdaD927604c5cB78F15b3669a92Fa5A1427d33a2';
 
 // Types
 export interface BurnTransaction {

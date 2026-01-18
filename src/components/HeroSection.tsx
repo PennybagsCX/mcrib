@@ -1,15 +1,7 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function HeroSection() {
-  const [sauceLevel, setSauceLevel] = useState(1);
-  const [isOrdered, setIsOrdered] = useState(false);
-
-  const handleOrder = () => {
-    setIsOrdered(true);
-    setSauceLevel((prev) => Math.min(prev + 1, 5));
-    setTimeout(() => setIsOrdered(false), 500);
-  };
+  const sauceLevel = 1;
 
   const scrollToChart = () => {
     document.getElementById('chart')?.scrollIntoView({ behavior: 'smooth' });
