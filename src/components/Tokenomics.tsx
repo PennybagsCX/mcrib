@@ -3,6 +3,7 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import BurnCounter from './BurnCounter';
 import BubblemapsPartner from './BubblemapsPartner';
+import StakingPartner from './StakingPartner';
 import { useBurnData } from '../hooks/useBurnData';
 
 export default function Tokenomics() {
@@ -118,9 +119,11 @@ export default function Tokenomics() {
               <span className="text-2xl">Amount Per $MCRIB</span>
             </div>
 
-            <div className="border-b border-black py-1 flex justify-between">
+            <div className="border-b border-black py-1 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
               <span className="font-bold">Total Supply</span>
-              <span className="font-bold">{data?.totalSupply || 'Loading...'}</span>
+              <span className="font-bold text-right break-all text-xs sm:text-sm">
+                {data?.totalSupply || 'Loading...'}
+              </span>
             </div>
 
             <div className="border-b border-black py-1 pl-4 flex justify-between text-sm">
@@ -164,7 +167,7 @@ export default function Tokenomics() {
             </div>
 
             <div className="border-b border-black py-1 flex justify-between">
-              <span className="font-bold pl-4">- Dev Fee</span>
+              <span className="font-bold pl-4">- Auto-LP</span>
               <span className="font-bold text-sm">1%</span>
             </div>
 
@@ -186,6 +189,11 @@ export default function Tokenomics() {
         {/* Bubblemaps Partner Section */}
         <motion.div variants={itemVariants}>
           <BubblemapsPartner />
+        </motion.div>
+
+        {/* Staking Partner Section */}
+        <motion.div variants={itemVariants}>
+          <StakingPartner />
         </motion.div>
       </motion.div>
     </section>
